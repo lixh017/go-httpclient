@@ -313,7 +313,10 @@ func prepareTransport(options map[int]interface{}) (http.RoundTripper, error) {
 		}
 		tls_config.InsecureSkipVerify = unsafe_tls
 	}
-
+	
+	//keepAlives
+	transport.DisableKeepAlives = true
+	
 	return transport, nil
 }
 
